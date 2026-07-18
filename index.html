@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>港康足護 HK FootCare · 香港專業足部健康護理</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+            background: #f5f7fa;
+            color: #2c2c2c;
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #0f2a45 100%);
+            color: #fff;
+            padding: 50px 20px 40px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0; right: 0;
+            height: 36px;
+            background: #f5f7fa;
+            border-radius: 50% 50% 0 0;
+        }
+        .hero-icon { font-size: 48px; margin-bottom: 10px; }
+        .hero h1 { font-size: 28px; font-weight: 700; letter-spacing: 2px; }
+        .hero h1 small { font-size: 14px; font-weight: 400; opacity: 0.8; display: block; margin-top: 4px; }
+        .hero .subtitle {
+            font-size: 14px; opacity: 0.9; margin-top: 8px;
+        }
+        .hero-tags {
+            display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+            margin-top: 14px;
+        }
+        .hero-tags span {
+            background: rgba(255,255,255,0.12);
+            padding: 4px 12px; border-radius: 20px; font-size: 11px;
+        }
+        .hero .cta-btn {
+            display: inline-block;
+            background: #e8a838;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 10px 36px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 16px;
+            transition: .2s;
+        }
+        .hero .cta-btn:active { transform: scale(0.96); opacity: 0.9; }
+
+        /* ===== Container ===== */
+        .container { max-width: 480px; margin: 0 auto; padding: 0 14px; }
+
+        /* ===== Section ===== */
+        .section { margin-top: 24px; }
+        .section-title {
+            font-size: 17px; font-weight: 700; color: #1a3a5c;
+            padding-left: 10px; border-left: 3px solid #e8a838; margin-bottom: 12px;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: #fff; border-radius: 12px; padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 12px;
+        }
+
+        /* ===== Services ===== */
+        .service-group {
+            background: #fff; border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 14px;
+            overflow: hidden;
+        }
+        .service-header {
+            padding: 14px 16px;
+            background: #f0f4f8;
+            font-size: 15px; font-weight: 700; color: #1a3a5c;
+            border-bottom: 1px solid #e0e6ed;
+        }
+        .service-list { padding: 6px 16px 12px; }
+        .service-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .service-item:last-child { border-bottom: none; }
+        .service-item .name {
+            font-size: 14px; color: #444;
+        }
+        .service-item .price {
+            font-size: 14px; font-weight: 700; color: #1a3a5c;
+        }
+        .service-item .price small { font-size: 11px; font-weight: 400; color: #888; }
+
+        .note-box {
+            background: #f8f4eb;
+            border-left: 3px solid #e8a838;
+            padding: 12px 14px;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0 16px 14px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* ===== Why Us ===== */
+        .why-grid { display: flex; flex-direction: column; gap: 8px; }
+        .why-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            background: #fff; border-radius: 10px; padding: 12px 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .why-item .check { color: #1a8a5c; font-size: 16px; flex-shrink: 0; }
+        .why-item .text { font-size: 13px; color: #555; }
+
+        /* ===== Process ===== */
+        .process-list { counter-reset: step; }
+        .process-item {
+            display: flex; align-items: flex-start; gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .process-item:last-child { border-bottom: none; }
+        .process-item .num {
+            width: 28px; height: 28px; flex-shrink: 0;
+            background: #1a3a5c; color: #fff; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700;
+        }
+        .process-item .text { font-size: 14px; color: #444; padding-top: 3px; }
+
+        /* ===== Contact ===== */
+        .contact-bar { display: flex; gap: 8px; margin: 14px 0; }
+        .contact-bar a {
+            flex: 1; text-align: center; padding: 12px 0; border-radius: 10px;
+            font-size: 14px; font-weight: 600; text-decoration: none;
+        }
+        .contact-bar a:active { opacity: 0.85; }
+        .btn-wa { background: #25D366; color: #fff; }
+        .btn-call { background: #1a3a5c; color: #fff; }
+
+        /* ===== Booking ===== */
+        .form-card {
+            background: #fff; border-radius: 12px; padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .form-group { margin-bottom: 12px; }
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 4px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%; padding: 10px 12px; border: 1px solid #ddd;
+            border-radius: 8px; font-size: 14px; font-family: inherit;
+            background: #fafafa; transition: .2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none; border-color: #1a3a5c; background: #fff;
+        }
+        .form-group textarea { resize: vertical; min-height: 60px; }
+        .form-group select { appearance: auto; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #1a3a5c, #0f2a45);
+            color: #fff; border: none; border-radius: 10px;
+            font-size: 16px; font-weight: 600; cursor: pointer;
+        }
+        .btn-submit:active { transform: scale(0.98); }
+
+        /* ===== Sticky CTA ===== */
+        .sticky-cta {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: #fff; padding: 10px 14px 16px;
+            box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+            display: flex; gap: 8px; z-index: 100;
+        }
+        .sticky-cta a {
+            flex: 1; text-align: center; padding: 12px 0; border-radius: 10px;
+            font-size: 14px; font-weight: 600; text-decoration: none;
+        }
+        .sticky-cta .wa { background: #25D366; color: #fff; }
+
+        /* ===== Footer ===== */
+        .footer { text-align: center; padding: 18px; font-size: 12px; color: #999; }
+
+        .toast {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            background: #1a3a5c; color: #fff; padding: 12px 24px;
+            border-radius: 8px; font-size: 14px; z-index: 200;
+            opacity: 0; transition: .3s; pointer-events: none;
+        }
+        .toast.show { opacity: 1; }
+
+        @media (max-width: 400px) {
+            .hero h1 { font-size: 22px; }
+            .contact-bar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- ===== Hero ===== -->
+    <div class="hero">
+        <div class="hero-icon">🦶</div>
+        <h1>港康足護 <small>HK FootCare</small></h1>
+        <p class="subtitle">香港專業足部健康護理</p>
+        <div class="hero-tags">
+            <span>📍 香港工作室</span>
+            <span>🚗 上門服務</span>
+            <span>📅 全預約制</span>
+        </div>
+        <a href="https://wa.me/85295564471?text=你好，我想預約港康足護服務" class="cta-btn" target="_blank">📲 立即預約</a>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== Services ===== -->
+        <div class="section">
+            <div class="section-title">🔹 足部問題護理</div>
+
+            <div class="service-group">
+                <div class="service-header">建議價格（HKD）</div>
+                <div class="service-list">
+                    <div class="service-item">
+                        <span class="name">修腳護理</span>
+                        <span class="price">$280 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">灰指甲護理</span>
+                        <span class="price">$380 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">甲溝炎護理</span>
+                        <span class="price">$380 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">嵌甲矯正</span>
+                        <span class="price">$480 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">雞眼護理</span>
+                        <span class="price">$300 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">厚甲修護</span>
+                        <span class="price">$320 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">老繭／硬皮護理</span>
+                        <span class="price">$280 <small>起</small></span>
+                    </div>
+                    <div class="service-item">
+                        <span class="name">足部保養</span>
+                        <span class="price">$380 <small>起</small></span>
+                    </div>
+                </div>
+                <div class="note-box">
+                    ⚠️ 實際收費將根據足部情況、護理難度及所需時間評估，<br>
+                    護理前會先說明服務內容及費用。
+                </div>
+            </div>
+
+            <div class="service-group">
+                <div class="service-header">足部健康保養</div>
+                <div class="service-list">
+                    <div class="service-item"><span class="name">修腳護理</span><span class="price"></span></div>
+                    <div class="service-item"><span class="name">足部深層清潔</span><span class="price"></span></div>
+                    <div class="service-item"><span class="name">足部角質管理</span><span class="price"></span></div>
+                    <div class="service-item"><span class="name">足部保養護理</span><span class="price"></span></div>
+                </div>
+            </div>
+
+            <div class="card" style="text-align:center;padding:14px;">
+                <p style="font-size:14px;color:#555;">🏠 工作室 / 🚗 上門服務</p>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:8px;">
+                    <span style="background:#e8f0fe;padding:4px 10px;border-radius:16px;font-size:12px;color:#1a3a5c;">✔ 工作室預約</span>
+                    <span style="background:#e8f0fe;padding:4px 10px;border-radius:16px;font-size:12px;color:#1a3a5c;">✔ 香港上門服務</span>
+                    <span style="background:#e8f0fe;padding:4px 10px;border-radius:16px;font-size:12px;color:#1a3a5c;">✔ 長者足部護理</span>
+                    <span style="background:#e8f0fe;padding:4px 10px;border-radius:16px;font-size:12px;color:#1a3a5c;">✔ 行動不便人士服務</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Why Us ===== -->
+        <div class="section">
+            <div class="section-title">為什麼選擇港康足護</div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="check">✅</span>
+                    <span class="text">一人一套消毒工具</span>
+                </div>
+                <div class="why-item">
+                    <span class="check">✅</span>
+                    <span class="text">專業足部護理技術</span>
+                </div>
+                <div class="why-item">
+                    <span class="check">✅</span>
+                    <span class="text">預約制服務</span>
+                </div>
+                <div class="why-item">
+                    <span class="check">✅</span>
+                    <span class="text">工作室及香港上門服務</span>
+                </div>
+                <div class="why-item">
+                    <span class="check">✅</span>
+                    <span class="text">注重衛生、安全及私隱</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Process ===== -->
+        <div class="section">
+            <div class="section-title">預約流程</div>
+            <div class="card process-list">
+                <div class="process-item">
+                    <div class="num">1</div>
+                    <div class="text">聯絡客服</div>
+                </div>
+                <div class="process-item">
+                    <div class="num">2</div>
+                    <div class="text">發送足部照片初步評估</div>
+                </div>
+                <div class="process-item">
+                    <div class="num">3</div>
+                    <div class="text">安排時間</div>
+                </div>
+                <div class="process-item">
+                    <div class="num">4</div>
+                    <div class="text">工作室／上門服務</div>
+                </div>
+                <div class="process-item">
+                    <div class="num">5</div>
+                    <div class="text">完成護理及後續建議</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Booking ===== -->
+        <div class="section">
+            <div class="section-title">📅 預約服務</div>
+            <div class="form-card">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" name="name" required placeholder="您的稱呼">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">電話 *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="方便聯繫您">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">預約項目 *</label>
+                        <select id="service" name="service" required>
+                            <option value="">請選擇服務</option>
+                            <option value="修腳護理">修腳護理</option>
+                            <option value="灰指甲護理">灰指甲護理</option>
+                            <option value="甲溝炎護理">甲溝炎護理</option>
+                            <option value="嵌甲矯正">嵌甲矯正</option>
+                            <option value="雞眼護理">雞眼護理</option>
+                            <option value="厚甲修護">厚甲修護</option>
+                            <option value="老繭硬皮護理">老繭／硬皮護理</option>
+                            <option value="足部保養">足部保養</option>
+                            <option value="足部深層清潔">足部深層清潔</option>
+                            <option value="足部角質管理">足部角質管理</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">服務方式 *</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">請選擇</option>
+                            <option value="工作室">工作室（到店）</option>
+                            <option value="上門">上門服務</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">期望日期</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="note">備註</label>
+                        <textarea id="note" name="note" placeholder="上門請填地址／長者或行動不便請標註"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">📲 提交預約</button>
+                </form>
+                <p style="text-align:center;font-size:12px;color:#999;margin-top:10px;">
+                    提交後透過 WhatsApp 與您確認
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== Footer ===== -->
+        <div class="section">
+            <div class="section-title">聯絡我們</div>
+            <div class="card">
+                <p style="font-size:14px;">📍 香港工作室（地址可後續加入）</p>
+                <p style="font-size:14px;margin-top:6px;">🚗 香港上門服務</p>
+                <p style="font-size:14px;margin-top:6px;">📅 全預約制</p>
+                <div class="contact-bar">
+                    <a href="https://wa.me/85295564471?text=你好，我想預約港康足護服務" class="btn-wa" target="_blank">💬 WhatsApp</a>
+                    <a href="tel:+85295564471" class="btn-call">📞 致電</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🦶 港康足護 HK FootCare</p>
+            <p style="margin-top:4px;">香港專業足部健康護理 · 全預約制</p>
+        </div>
+
+    </div>
+
+    <!-- ===== Sticky CTA ===== -->
+    <div class="sticky-cta">
+        <a href="https://wa.me/85295564471?text=你好，我想預約港康足護服務" class="wa" target="_blank">💬 WhatsApp 預約</a>
+    </div>
+
+    <script>
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('service').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const date = document.getElementById('date').value;
+            const note = document.getElementById('note').value.trim();
+
+            if (!name || !phone || !service || !serviceType) {
+                showToast('請填寫完整信息');
+                return;
+            }
+
+            let msg = `【預約】港康足護\n`;
+            msg += `姓名：${name}\n`;
+            msg += `電話：${phone}\n`;
+            msg += `項目：${service}\n`;
+            msg += `方式：${serviceType}\n`;
+            if (date) msg += `日期：${date}\n`;
+            if (note) msg += `備註：${note}\n`;
+
+            window.open(`https://wa.me/85295564471?text=${encodeURIComponent(msg)}`, '_blank');
+            showToast('✅ 預約信息已發送，請透過 WhatsApp 確認');
+        });
+
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+        }
+    </script>
+
+</body>
+</html>
