@@ -77,6 +77,112 @@
         .video-card video { display: block; max-width: 100%; }
         .video-card video::-webkit-media-controls { border-radius: 8px; }
 
+        /* ===== Products ===== */
+        .nav-links {
+            display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+            margin: 14px 0 4px;
+        }
+        .nav-links a {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            padding: 6px 14px; border-radius: 20px;
+            font-size: 12px; color: #fff; text-decoration: none;
+            transition: .2s;
+        }
+        .nav-links a:active { background: rgba(255,255,255,0.25); }
+
+        .prod-nav {
+            display: flex; gap: 6px; overflow-x: auto;
+            padding-bottom: 6px; margin-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .prod-nav::-webkit-scrollbar { height: 3px; }
+        .prod-nav::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .prod-nav a {
+            flex-shrink: 0;
+            padding: 8px 16px; border-radius: 20px;
+            font-size: 13px; font-weight: 600; color: #1a3a5c;
+            background: #e8f0fe; text-decoration: none;
+            transition: .2s;
+        }
+        .prod-nav a:active,
+        .prod-nav a.active { background: #1a3a5c; color: #fff; }
+
+        .prod-grid { display: flex; flex-direction: column; gap: 14px; }
+        .prod-card {
+            background: #fff; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .prod-img {
+            width: 100%; aspect-ratio: 1/1;
+            background: #f0f4f8;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 48px; color: #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+        .prod-img img { width: 100%; height: 100%; object-fit: cover; }
+        .prod-img .placeholder-icon { font-size: 56px; opacity: 0.3; }
+        .prod-body { padding: 14px 16px 16px; }
+        .prod-name { font-size: 16px; font-weight: 700; color: #1a3a5c; }
+        .prod-desc { font-size: 13px; color: #666; margin-top: 4px; line-height: 1.5; }
+        .prod-price {
+            font-size: 18px; font-weight: 700; color: #c0392b;
+            margin-top: 8px;
+        }
+        .prod-price small { font-size: 12px; font-weight: 400; color: #999; }
+        .prod-tags {
+            display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px;
+        }
+        .prod-tags span {
+            background: #f0f4f8; padding: 2px 10px;
+            border-radius: 12px; font-size: 11px; color: #1a3a5c;
+        }
+        .prod-detail {
+            max-height: 0; overflow: hidden;
+            transition: max-height .3s ease, padding .3s ease;
+            padding: 0 16px;
+        }
+        .prod-detail.open {
+            max-height: 600px;
+            padding: 0 16px 16px;
+        }
+        .prod-detail table { width: 100%; font-size: 12px; border-collapse: collapse; }
+        .prod-detail td {
+            padding: 6px 4px; border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        .prod-detail td:first-child {
+            width: 70px; color: #999; white-space: nowrap;
+        }
+        .prod-detail td:last-child { color: #444; }
+        .btn-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 16px;
+            background: #f0f4f8; color: #1a3a5c;
+            border: none; border-radius: 6px;
+            font-size: 12px; cursor: pointer;
+        }
+        .btn-more:active { background: #d0dce8; }
+        .btn-wa-sm {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: #25D366; color: #fff;
+            border: none; border-radius: 8px;
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-wa-sm:active { opacity: 0.9; }
+
+        .cat-header {
+            font-size: 15px; font-weight: 700; color: #1a3a5c;
+            padding: 10px 0 6px;
+            margin-top: 8px;
+            border-bottom: 2px solid #e8a838;
+        }
+
         /* ===== Services ===== */
         .service-group {
             background: #fff; border-radius: 12px;
@@ -226,6 +332,12 @@
             <span>🚗 上門服務</span>
             <span>📅 全預約制</span>
         </div>
+        <div class="nav-links">
+            <a href="#services">🔹 服務</a>
+            <a href="#video-section">🎬 影片</a>
+            <a href="#products">🛍️ 健康用品</a>
+            <a href="#booking">📅 預約</a>
+        </div>
         <a href="https://wa.me/85295564471?text=你好，我想預約港康足護服務" class="cta-btn" target="_blank">📲 立即預約</a>
     </div>
 
@@ -367,8 +479,283 @@
             </div>
         </div>
 
+        <!-- ===== Products ===== -->
+        <div class="section" id="products">
+            <div class="section-title">🛍️ 足部健康用品</div>
+            <p style="font-size:13px;color:#888;margin-bottom:12px;">
+                精選足部護理產品 · 深圳直發香港 · WhatsApp 諮詢訂購
+            </p>
+
+            <div class="prod-nav" id="prodNav">
+                <a href="#prod-a" class="active" data-cat="a">足部護理工具</a>
+                <a href="#prod-b" data-cat="b">按摩放鬆</a>
+                <a href="#prod-c" data-cat="c">日常護理</a>
+                <a href="#prod-d" data-cat="d">組合套裝</a>
+            </div>
+
+            <!-- ===== Category A: 足部護理工具 ===== -->
+            <div class="prod-grid" id="prod-a" data-cat="a">
+                <div class="cat-header">A. 足部護理工具</div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">🔧</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">足部護理工具套裝（6件套）</div>
+                        <div class="prod-desc">不鏽鋼修腳刀、死皮銼、指甲剪、死皮剪、刮刀、磨腳石，家用必備</div>
+                        <div class="prod-price">HK$128 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>不鏽鋼</span><span>6件套</span><span>家用</span><span>新手友好</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足部護理工具套裝6件套】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>專業足部護理6件套，採用優質不鏽鋼材質，一套搞定日常足部護理需求。修腳刀鋒利耐用，死皮銼有效去除角質，指甲剪精準修剪。</td></tr>
+                            <tr><td>賣點</td><td>不鏽鋼防鏽耐用／人體工學手柄／附收納盒／全套滿足基礎護理</td></tr>
+                            <tr><td>用法</td><td>清潔雙足後，先用磨腳石軟化角質，再用死皮銼去除，最後用修腳刀精修</td></tr>
+                            <tr><td>適合</td><td>居家足部保養人士、長者、長期站立工作者</td></tr>
+                            <tr><td>售價</td><td>HK$128-168</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">✂️</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">專業修腳工具套裝（10件套）</div>
+                        <div class="prod-desc">升級版專業修腳10件套，含指甲鉗、死皮推、死皮剪、腳皮刮、銼刀等</div>
+                        <div class="prod-price">HK$198 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>專業級</span><span>10件套</span><span>不鏽鋼</span><span>⭐首推</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【專業修腳工具套裝10件套】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>專業修腳10件套，滿足從修剪到打磨的全流程足部護理。優質不鏽鋼打造，鋒利耐用，適合家庭及專業使用。</td></tr>
+                            <tr><td>賣點</td><td>全不鏽鋼防腐耐用／10件全能配置／附收納包便攜／舒適握柄</td></tr>
+                            <tr><td>用法</td><td>先用指甲鉗修剪指甲，再用死皮推清理甲邊，死皮剪去除硬皮，銼刀打磨光滑</td></tr>
+                            <tr><td>適合</td><td>需要完整修腳工具者、家庭必備、足部護理愛好者</td></tr>
+                            <tr><td>售價</td><td>HK$198-268</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">💅</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">專業指甲護理工具套裝</div>
+                        <div class="prod-desc">專注指甲護理：不鏽鋼指甲鉗、死皮推、甲溝清潔器、指甲銼、死皮剪</div>
+                        <div class="prod-price">HK$88 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>指甲護理</span><span>精準</span><span>小巧</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【專業指甲護理工具套裝】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>專為指甲護理設計的工具套裝，包含不鏽鋼指甲鉗、死皮推、甲溝清潔器、指甲銼、死皮剪，精準處理各類指甲問題。</td></tr>
+                            <tr><td>賣點</td><td>精準修剪不傷肉／防飛濺設計／不鏽鋼耐用／附收納盒</td></tr>
+                            <tr><td>用法</td><td>浸泡軟化後，用死皮推推起甲邊死皮，死皮剪修剪，指甲銼打磨形狀</td></tr>
+                            <tr><td>適合</td><td>灰甲護理者、甲溝炎患者、注重指甲清潔者</td></tr>
+                            <tr><td>售價</td><td>HK$88-128</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Category B: 按摩放鬆 ===== -->
+            <div class="prod-grid" id="prod-b" data-cat="b" style="display:none;">
+                <div class="cat-header">B. 足部按摩放鬆</div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">⚽</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">足底筋膜按摩球</div>
+                        <div class="prod-desc">高彈力TPR材質，深層刺激足底穴位，舒緩腳底疲勞和筋膜緊張</div>
+                        <div class="prod-price">HK$48 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>按摩球</span><span>高彈力</span><span>穴位</span><span>便攜</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足底筋膜按摩球】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>高彈力TPR材質按摩球，模擬拇指按壓效果，深層刺激足底穴位和筋膜。可配合站立或坐姿使用，隨時隨地放鬆雙腳。</td></tr>
+                            <tr><td>賣點</td><td>高彈力不變形／凸點穴位刺激／防水易清潔／輕巧便攜</td></tr>
+                            <tr><td>用法</td><td>坐著或站立時將球放於腳底，前後滾動按壓，每次5-10分鐘</td></tr>
+                            <tr><td>適合</td><td>上班族、久站人士、運動後恢復、長者足部保健</td></tr>
+                            <tr><td>售價</td><td>HK$48-68</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">🔄</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">足部按摩滾輪</div>
+                        <div class="prod-desc">雙排滾輪設計，全腳底按摩，促進血液循環，舒緩腳部酸脹</div>
+                        <div class="prod-price">HK$68 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>滾輪</span><span>雙排</span><span>穴位</span><span>舒緩</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足部按摩滾輪】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>雙排滾輪按摩器，凹凸顆粒全面覆蓋腳底反射區，在家就能享受足底按摩。防滑底座設計，使用安全穩定。</td></tr>
+                            <tr><td>賣點</td><td>雙排覆蓋全腳底／凸點穴位按摩／防滑底座／免電免電池</td></tr>
+                            <tr><td>用法</td><td>放在地上，雙腳輪流在滾輪上前後滾動，每次10-15分鐘</td></tr>
+                            <tr><td>適合</td><td>上班族、久站人士、運動恢復、足底筋膜炎舒緩</td></tr>
+                            <tr><td>售價</td><td>HK$68-98</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Category C: 日常護理 ===== -->
+            <div class="prod-grid" id="prod-c" data-cat="c" style="display:none;">
+                <div class="cat-header">C. 足部日常護理</div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">🧦</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">足跟護理襪（保濕修護襪）</div>
+                        <div class="prod-desc">凝膠內襯設計，鎖住保濕精華，夜間修護乾裂腳跟</div>
+                        <div class="prod-price">HK$58 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>保濕</span><span>修護</span><span>乾裂</span><span>夜用</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足跟護理襪】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>專為乾燥腳跟設計的保濕修護襪，內層凝膠注滿保濕精華，夜間穿戴8小時深層修護，改善腳跟乾裂粗糙。</td></tr>
+                            <tr><td>賣點</td><td>凝膠鎖水科技／夜間免清洗／柔軟親膚／可重複使用</td></tr>
+                            <tr><td>用法</td><td>清潔腳部後塗上潤膚霜，穿上護理襪過夜，早上取下即可</td></tr>
+                            <tr><td>適合</td><td>腳跟乾裂者、注重足部保養女性、長者、空調房常待人士</td></tr>
+                            <tr><td>售價</td><td>HK$58-88/對</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">🦶</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">矽膠護腳套（前掌/後跟款）</div>
+                        <div class="prod-desc">柔軟醫用矽膠材質，緩解行走壓力，保護腳掌和腳跟</div>
+                        <div class="prod-price">HK$38 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>矽膠</span><span>減壓</span><span>防痛</span><span>可水洗</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【矽膠護腳套】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>柔軟醫用級矽膠製成，前掌款分散腳掌壓力，後跟款緩解腳跟疼痛。透明隱形設計，可搭配鞋履日常使用。</td></tr>
+                            <tr><td>賣點</td><td>醫用矽膠安全無味／透明隱形／減震緩壓／可清洗重複用</td></tr>
+                            <tr><td>用法</td><td>清潔腳部後直接穿戴於前掌或後跟，搭配鞋襪使用</td></tr>
+                            <tr><td>適合</td><td>久站工作者、高跟鞋女性、腳痛人士、運動人群</td></tr>
+                            <tr><td>售價</td><td>HK$38-58/對</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">🧴</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">足部護理用品套裝（護理霜+噴霧+磨腳板）</div>
+                        <div class="prod-desc">日常足部護理三件套：深層護理霜、清爽噴霧、專業磨腳板</div>
+                        <div class="prod-price">HK$98 <small>起</small></div>
+                        <div class="prod-tags">
+                            <span>護理套裝</span><span>深層保濕</span><span>清爽</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足部護理用品套裝】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>日常足部護理必備套裝：深層護理霜滋養乾燥肌膚，清爽噴霧殺菌除味，專業磨腳板去除死皮角質。</td></tr>
+                            <tr><td>賣點</td><td>三步護理系統／深層保濕配方／清爽不黏膩／香港天氣適用</td></tr>
+                            <tr><td>用法</td><td>先磨腳板去角質 → 噴霧消毒清爽 → 最後塗護理霜保濕</td></tr>
+                            <tr><td>適合</td><td>日常足部保養人士、注重衛生者、空調房乾燥肌膚</td></tr>
+                            <tr><td>售價</td><td>HK$98-148</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Category D: 組合套裝 ===== -->
+            <div class="prod-grid" id="prod-d" data-cat="d" style="display:none;">
+                <div class="cat-header">D. 足部護理組合套裝</div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">📦</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">居家足部護理基礎套裝</div>
+                        <div class="prod-desc">修腳工具6件套 + 足跟護理襪1對 + 按摩球1個，新手入門首選</div>
+                        <div class="prod-price">HK$198 <small>套</small></div>
+                        <div class="prod-tags">
+                            <span>超值</span><span>新手</span><span>組合</span><span>⭐推薦</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【居家足部護理基礎套裝】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>針對居家足部護理新手設計的超值組合套裝，包含修腳工具6件套、足跟護理襪和按摩球，一次買齊所有必需品。</td></tr>
+                            <tr><td>賣點</td><td>一站買齊省HK$50+／新手入門必備／送收納包／附使用指南</td></tr>
+                            <tr><td>用法</td><td>先用工具修剪護理 → 再用按摩球放鬆 → 最後穿護理襪保濕修護</td></tr>
+                            <tr><td>適合</td><td>家中無工具者、想開始足部護理但不知從何入手者</td></tr>
+                            <tr><td>售價</td><td>HK$198-268</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img"><span class="placeholder-icon">🎁</span></div>
+                    <div class="prod-body">
+                        <div class="prod-name">專業護理升級套裝</div>
+                        <div class="prod-desc">修腳工具10件套 + 按摩滾輪 + 矽膠護腳套 + 護理用品套裝，進階之選</div>
+                        <div class="prod-price">HK$368 <small>套</small></div>
+                        <div class="prod-tags">
+                            <span>進階</span><span>全面</span><span>超值</span>
+                        </div>
+                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
+                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【專業護理升級套裝】" target="_blank">💬 微信諮詢</a>
+                    </div>
+                    <div class="prod-detail">
+                        <table>
+                            <tr><td>介紹</td><td>足部護理進階組合，從工具到護理品全面覆蓋。10件專業修腳工具搭配按摩滾輪、矽膠護腳套和護理用品，一次到位。</td></tr>
+                            <tr><td>賣點</td><td>完整護理閉環（工具→放鬆→保護→保養）／比單買省HK$120+</td></tr>
+                            <tr><td>用法</td><td>工具修剪 → 滾輪按摩 → 護腳套保護 → 護理品保養</td></tr>
+                            <tr><td>適合</td><td>對足部護理有完整需求者、送禮、家庭共享</td></tr>
+                            <tr><td>售價</td><td>HK$368-468</td></tr>
+                            <tr><td>來源</td><td>深圳 / 一件代發</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ===== Booking ===== -->
-        <div class="section">
+        <div class="section" id="booking">
             <div class="section-title">📅 預約服務</div>
             <div class="form-card">
                 <form id="bookingForm">
@@ -484,6 +871,34 @@
         if (dateInput) {
             dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
         }
+
+        // Product detail toggle
+        function toggleDetail(btn) {
+            const detail = btn.closest('.prod-card').querySelector('.prod-detail');
+            if (!detail) return;
+            detail.classList.toggle('open');
+            btn.textContent = detail.classList.contains('open') ? '📋 收起詳情' : '📋 查看詳情';
+        }
+
+        // Category switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#prodNav a');
+            const grids = document.querySelectorAll('.prod-grid');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const cat = this.dataset.cat;
+
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+
+                    grids.forEach(g => {
+                        g.style.display = g.dataset.cat === cat ? '' : 'none';
+                    });
+                });
+            });
+        });
     </script>
 
 </body>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>港康足護 - 簡單宣傳</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e8ecf1;
+    font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif;
+  }
+  
+  .flyer {
+    width: 540px;
+    background: linear-gradient(160deg, #1a3a5c 0%, #0f2a45 60%, #0a1e33 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 50px 40px 44px;
+  }
+  
+  .flyer::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(232,168,56,0.10) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  .flyer::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(232,168,56,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .qr-wrapper {
+    background: #fff;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  .qr-wrapper img {
+    width: 140px;
+    height: 140px;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  .qr-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+  }
+  
+  .right {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .foot-art {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    position: relative;
+  }
+  
+  .foot-art svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 8px rgba(232,168,56,0.3));
+  }
+  
+  .shop-name {
+    font-size: 36px;
+    font-weight: 900;
+    color: #e8a838;
+    text-shadow: 0 2px 12px rgba(232,168,56,0.25);
+    letter-spacing: 6px;
+    line-height: 1.2;
+  }
+  
+  .shop-name-en {
+    font-size: 13px;
+    color: rgba(232,168,56,0.45);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  
+  .divider {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e8a838, transparent);
+    margin: 14px auto;
+    border-radius: 1px;
+  }
+  
+  .tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 3px;
+  }
+  
+  .accent-bar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  
+  .accent-bar span {
+    color: rgba(255,255,255,0.35);
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  
+  @media (max-width: 480px) {
+    .flyer { width: 92vw; padding: 30px 20px; }
+    .content { flex-direction: column; gap: 20px; }
+    .shop-name { font-size: 28px; }
+    .qr-wrapper img { width: 120px; height: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="flyer">
+  
+  <div class="content">
+    
+    <!-- Left: QR Code -->
+    <div class="left">
+      <div class="qr-wrapper">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://yuanlju96-commits.github.io/hkfootcare/" alt="QR Code">
+      </div>
+      <div class="qr-label">SCAN ME</div>
+    </div>
+    
+    <!-- Right: Shop name + foot art -->
+    <div class="right">
+      
+      <div class="foot-art">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M38 10 C42 8, 48 12, 48 18 L48 30 C50 28, 56 26, 58 30 
+                   C60 34, 58 40, 54 44 C58 46, 62 50, 60 56 
+                   C58 62, 52 66, 44 68 C36 70, 28 68, 24 64 
+                   C20 60, 18 54, 20 48 C22 42, 26 38, 30 36 
+                   C28 32, 26 26, 28 22 C30 18, 34 14, 38 10Z" 
+                fill="#e8a838" opacity="0.9"/>
+          <path d="M36 16 C38 14, 42 16, 42 20 L42 28 C42 30, 40 30, 38 30 
+                   C36 30, 34 28, 34 24 C34 20, 34 18, 36 16Z" 
+                fill="#1a3a5c" opacity="0.3"/>
+          <circle cx="46" cy="22" r="2" fill="#fff" opacity="0.4"/>
+          <circle cx="50" cy="28" r="1.8" fill="#fff" opacity="0.35"/>
+          <circle cx="42" cy="18" r="1.5" fill="#fff" opacity="0.3"/>
+        </svg>
+      </div>
+      
+      <div class="shop-name">港康足護</div>
+      <div class="shop-name-en">HK FootCare</div>
+      <div class="divider"></div>
+      <div class="tagline">香港專業足部健康護理</div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="accent-bar">
+    <span>📍 長沙灣工作室</span>
+    <span>🚗 港九上門</span>
+    <span>📅 全預約制</span>
+  </div>
+
+</div>
+
+</body>
+</html>
