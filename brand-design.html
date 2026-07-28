@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>港康足護 HK FootCare · 品牌視覺設計</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 28px; color: #c9a961; text-align: center; margin-bottom: 6px; letter-spacing: 4px; }
+  .subtitle { text-align: center; color: #888; font-size: 14px; margin-bottom: 30px; letter-spacing: 2px; }
+
+  /* Section */
+  .section { margin-bottom: 50px; }
+  .section-title {
+    font-size: 20px; color: #c9a961;
+    border-left: 3px solid #c9a961; padding-left: 12px;
+    margin-bottom: 20px;
+  }
+  .section-desc { font-size: 13px; color: #999; margin-bottom: 16px; }
+
+  /* VI Board */
+  .vi-board {
+    background: #0f0f1e; border-radius: 12px; padding: 24px;
+    margin-bottom: 24px; border: 1px solid #333;
+  }
+
+  .color-swatches { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .swatch { width: 100px; text-align: center; }
+  .swatch-box { width: 100px; height: 60px; border-radius: 8px; margin-bottom: 4px; }
+  .swatch-label { font-size: 11px; color: #aaa; }
+
+  /* Signage Mockup */
+  .mockup-scene {
+    background: linear-gradient(180deg, #4a90d9 0%, #87ceeb 60%, #b0c4de 100%);
+    border-radius: 12px; padding: 40px 20px 60px;
+    position: relative; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .mockup-scene-night {
+    background: linear-gradient(180deg, #0a0a2e 0%, #1a1a3e 50%, #1a1a2e 100%);
+    border-radius: 12px; padding: 40px 20px 60px;
+    position: relative; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .building-front {
+    background: #2d2d3d; border-radius: 8px;
+    padding: 30px 20px 20px; max-width: 400px; margin: 0 auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .building-front-night {
+    background: #1a1a2e; border-radius: 8px;
+    padding: 30px 20px 20px; max-width: 400px; margin: 0 auto;
+    position: relative; border: 1px solid #333;
+  }
+  .shop-top { 
+    background: #1a1a2e; border-radius: 6px 6px 0 0;
+    padding: 16px; text-align: center; margin-bottom: 4px;
+    position: relative;
+  }
+  .shop-top-glow {
+    background: #0f0f2e; border-radius: 6px 6px 0 0;
+    padding: 16px; text-align: center; margin-bottom: 4px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(201,169,97,0.15);
+  }
+  .shop-sign { font-size: 20px; font-weight: 700; letter-spacing: 6px; color: #c9a961; }
+  .shop-sign-sub { font-size: 10px; letter-spacing: 3px; color: #aaa; margin-top: 2px; }
+  .shop-sign-tagline { font-size: 9px; letter-spacing: 2px; color: #c9a961; opacity: 0.7; margin-top: 4px; }
+  .shop-door {
+    background: #222; height: 120px; border-radius: 0 0 6px 6px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; padding: 0 16px;
+  }
+  .door-glass { 
+    width: 80px; height: 100px; background: linear-gradient(135deg, #334 0%, #1a1a2e 100%);
+    border-radius: 4px; border: 1px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; color: #555; letter-spacing: 1px;
+  }
+  .door-glass-night {
+    background: linear-gradient(135deg, #2a2a4e 0%, #1a1a3e 100%);
+    border: 1px solid #555;
+    box-shadow: inset 0 0 20px rgba(201,169,97,0.05);
+  }
+  .shop-window {
+    width: 180px; height: 100px; 
+    background: linear-gradient(135deg, #334 0%, #1a1a2e 100%);
+    border-radius: 4px; border: 1px solid #444;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8px; color: #555;
+  }
+  .shop-window-night {
+    background: linear-gradient(135deg, #2a2a4e 0%, #1a1a3e 100%);
+    border: 1px solid #555;
+    box-shadow: inset 0 0 20px rgba(201,169,97,0.05);
+  }
+  .mockup-label { text-align: center; font-size: 12px; color: #888; margin-top: 8px; letter-spacing: 1px; }
+
+  /* Uniform */
+  .uniform-display {
+    display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;
+  }
+  .uniform-item {
+    width: 220px; text-align: center;
+  }
+  .uniform-shirt {
+    width: 220px; height: 260px; border-radius: 12px;
+    position: relative; overflow: hidden;
+  }
+  .shirt-front { background: #3a3a4a; }
+  .shirt-back { background: #2a2a3a; }
+  .collar { 
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 30px; 
+    border-radius: 0 0 20px 20px;
+  }
+  .collar-front { background: #2a2a3a; border: 1px solid #555; }
+  .collar-back { background: #1a1a2e; border: 1px solid #555; }
+  .chest-logo {
+    position: absolute; top: 55px; left: 50%; transform: translateX(-50%);
+    text-align: center;
+  }
+  .chest-logo .name { font-size: 11px; font-weight: 700; color: #c9a961; letter-spacing: 2px; }
+  .chest-logo .sub { font-size: 7px; color: #888; letter-spacing: 1px; margin-top: 1px; }
+  .back-logo {
+    position: absolute; top: 60px; left: 50%; transform: translateX(-50%);
+    text-align: center; width: 180px;
+  }
+  .back-logo .name { font-size: 16px; font-weight: 700; color: #c9a961; letter-spacing: 4px; }
+  .back-logo .sub { font-size: 9px; color: #888; letter-spacing: 2px; margin-top: 2px; }
+  .back-logo .tagline { font-size: 8px; color: #c9a961; opacity: 0.6; letter-spacing: 1px; margin-top: 4px; }
+  .uniform-label { font-size: 12px; color: #aaa; margin-top: 8px; letter-spacing: 1px; }
+  .sleeve-l { position: absolute; left: -15px; top: 20px; width: 30px; height: 100px; border-radius: 8px; }
+  .sleeve-l-front { background: #3a3a4a; border: 1px solid #4a4a5a; }
+  .sleeve-l-back { background: #2a2a3a; border: 1px solid #3a3a4a; }
+  .sleeve-r { position: absolute; right: -15px; top: 20px; width: 30px; height: 100px; border-radius: 8px; }
+  .sleeve-r-front { background: #3a3a4a; border: 1px solid #4a4a5a; }
+  .sleeve-r-back { background: #2a2a3a; border: 1px solid #3a3a4a; }
+
+  /* Color Palette Boxes */
+  .palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 12px; }
+  .palette-item { padding: 12px; border-radius: 8px; color: #fff; }
+  .palette-item .pname { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+  .palette-item .pcode { font-size: 11px; opacity: 0.7; }
+  .palette-item .puse { font-size: 10px; opacity: 0.6; margin-top: 2px; }
+
+  /* Typography */
+  .font-sample { margin: 12px 0; }
+  .font-sample .label { font-size: 11px; color: #888; margin-bottom: 4px; }
+  .font-sample .text { font-size: 18px; letter-spacing: 2px; }
+
+  .note { font-size: 12px; color: #666; margin-top: 20px; text-align: center; border-top: 1px solid #333; padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>港康足護</h1>
+<p class="subtitle">HK FootCare · 品牌視覺識別系統（VIS）</p>
+
+<!-- ===== VI Color System ===== -->
+<div class="section">
+  <div class="section-title">🎨 品牌配色方案</div>
+  <div class="section-desc">統一VI色彩體系，應用於招牌、制服、數位介面</div>
+
+  <div class="palette-grid">
+    <div class="palette-item" style="background:#0f0f1e;"><div class="pname">啞黑</div><div class="pcode">#0F0F1E</div><div class="puse">招牌底色 / 背景主色</div></div>
+    <div class="palette-item" style="background:#1a1a2e;"><div class="pname">深灰藍</div><div class="pcode">#1A1A2E</div><div class="puse">頁面底色 / 制服務</div></div>
+    <div class="palette-item" style="background:#2d2d3d;"><div class="pname">金屬灰</div><div class="pcode">#2D2D3D</div><div class="puse">制服主色 / 卡片底色</div></div>
+    <div class="palette-item" style="background:#3a3a4a;"><div class="pname">淺灰</div><div class="pcode">#3A3A4A</div><div class="puse">制服淺色款 / 細節</div></div>
+    <div class="palette-item" style="background:#c9a961;"><div class="pname">香檳金</div><div class="pcode">#C9A961</div><div class="puse">品牌主色 / 招牌字 / 強調</div></div>
+    <div class="palette-item" style="background:#e8a838;"><div class="pname">暖金</div><div class="pcode">#E8A838</div><div class="puse">CTA按鈕 / 金色點綴</div></div>
+    <div class="palette-item" style="background:#f5f5f0;"><div class="pname" style="color:#333;">銀白</div><div class="pcode" style="color:#666;">#F5F5F0</div><div class="puse" style="color:#666;">招牌輔助字 / 文字主色</div></div>
+    <div class="palette-item" style="background:#1a3a5c;"><div class="pname">深海軍藍</div><div class="pcode">#1A3A5C</div><div class="puse">現有服務品牌色（保留）</div></div>
+  </div>
+</div>
+
+<!-- ===== 1. Store Signage ===== -->
+<div class="section">
+  <div class="section-title">🏪 店面招牌效果圖</div>
+  <div class="section-desc">香港街鋪風格 · 深灰啞黑背景 · 金色立體字 · LED背光</div>
+
+  <div class="vi-board">
+    <p style="color:#888;font-size:12px;margin-bottom:12px;letter-spacing:1px;">☀️ 白天門店效果</p>
+    <div class="mockup-scene">
+      <div class="building-front">
+        <div class="shop-top">
+          <div class="shop-sign">港康足護</div>
+          <div class="shop-sign-sub">HK FootCare</div>
+          <div class="shop-sign-tagline">專業足部護理中心</div>
+          <div class="shop-sign-tagline" style="font-size:8px;letter-spacing:1px;margin-top:1px;">Foot Care · Pain Relief · Wellness</div>
+          <!-- LED背光效果 -->
+          <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a961,transparent);"></div>
+        </div>
+        <div class="shop-door" style="gap:10px;">
+          <div class="door-glass"></div>
+          <div class="shop-window"></div>
+        </div>
+      </div>
+    </div>
+    <p class="mockup-label">白天效果 — 深灰啞面招牌 + 金色立體字 + 簡約門面</p>
+  </div>
+
+  <div class="vi-board">
+    <p style="color:#888;font-size:12px;margin-bottom:12px;letter-spacing:1px;">🌙 夜間燈光效果</p>
+    <div class="mockup-scene-night">
+      <div class="building-front-night">
+        <div class="shop-top-glow">
+          <div class="shop-sign">港康足護</div>
+          <div class="shop-sign-sub">HK FootCare</div>
+          <div class="shop-sign-tagline">專業足部護理中心</div>
+          <div class="shop-sign-tagline" style="font-size:8px;letter-spacing:1px;margin-top:1px;">Foot Care · Pain Relief · Wellness</div>
+          <!-- LED背光輝光 -->
+          <div style="position:absolute;bottom:-2px;left:-10px;right:-10px;height:6px;background:linear-gradient(90deg,transparent,#c9a961,#e8a838,#c9a961,transparent);filter:blur(3px);"></div>
+          <div style="position:absolute;top:-2px;left:-10px;right:-10px;height:4px;background:linear-gradient(90deg,transparent,rgba(201,169,97,0.3),transparent);filter:blur(5px);"></div>
+        </div>
+        <div class="shop-door" style="gap:10px;">
+          <div class="door-glass door-glass-night"></div>
+          <div class="shop-window shop-window-night"></div>
+        </div>
+      </div>
+    </div>
+    <p class="mockup-label">夜晚效果 — LED背光招牌 + 金色輝光 + 高級氛圍</p>
+  </div>
+
+  <div class="vi-board">
+    <p style="color:#888;font-size:12px;margin-bottom:12px;letter-spacing:1px;">📐 正面門頭展示（設計尺寸參考）</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+      <div style="background:#0f0f1e;border-radius:8px;padding:20px;width:280px;text-align:center;border:1px solid #333;">
+        <div style="background:#1a1a2e;border-radius:6px;padding:20px;">
+          <div style="font-size:24px;font-weight:700;color:#c9a961;letter-spacing:8px;">港康足護</div>
+          <div style="font-size:11px;color:#aaa;letter-spacing:3px;margin-top:4px;">HK FootCare</div>
+          <div style="width:40px;height:1px;background:#c9a961;margin:10px auto;"></div>
+          <div style="font-size:9px;color:#c9a961;opacity:0.7;letter-spacing:2px;">專業足部護理中心</div>
+          <div style="font-size:7px;color:#666;letter-spacing:1px;margin-top:4px;">Foot Care · Pain Relief · Wellness</div>
+        </div>
+        <div style="color:#666;font-size:9px;margin-top:10px;">招牌尺寸：120cm × 60cm ｜ 字體：金色立體凸字 ｜ 背光：LED暖光</div>
+      </div>
+    </div>
+    <p class="mockup-label">正面門頭展示規格</p>
+  </div>
+</div>
+
+<!-- ===== 2. Uniform Design ===== -->
+<div class="section">
+  <div class="section-title">👔 員工工作服設計</div>
+  <div class="section-desc">專業足部護理師制服 · 灰色/黑色 · 品牌LOGO識別</div>
+
+  <div class="vi-board">
+    <div class="uniform-display">
+      <div class="uniform-item">
+        <div class="uniform-shirt shirt-front">
+          <div class="collar collar-front"></div>
+          <div class="sleeve-l sleeve-l-front"></div>
+          <div class="sleeve-r sleeve-r-front"></div>
+          <div class="chest-logo">
+            <div class="name">港康足護</div>
+            <div class="sub">HK FootCare</div>
+          </div>
+        </div>
+        <div class="uniform-label">正面（胸口LOGO）</div>
+        <div style="color:#666;font-size:10px;margin-top:2px;">深灰色上衣 · 金色刺繡LOGO</div>
+      </div>
+
+      <div class="uniform-item">
+        <div class="uniform-shirt shirt-back">
+          <div class="collar collar-back"></div>
+          <div class="sleeve-l sleeve-l-back"></div>
+          <div class="sleeve-r sleeve-r-back"></div>
+          <div class="back-logo">
+            <div class="name">港康足護</div>
+            <div class="sub">HK FootCare</div>
+            <div class="tagline">Foot Care · Pain Relief</div>
+          </div>
+        </div>
+        <div class="uniform-label">背面（大字LOGO）</div>
+        <div style="color:#666;font-size:10px;">黑色上衣 · 金色印刷</div>
+      </div>
+
+      <div class="uniform-item">
+        <div style="width:220px;padding:16px;background:#2d2d3d;border-radius:8px;">
+          <div style="font-size:11px;color:#c9a961;margin-bottom:8px;letter-spacing:1px;">📋 制服規範</div>
+          <table style="width:100%;font-size:10px;color:#aaa;border-collapse:collapse;">
+            <tr><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">顏色</td><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">深灰 / 啞黑</td></tr>
+            <tr><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">材質</td><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">棉質混紡 / 透氣面料</td></tr>
+            <tr><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">胸口LOGO</td><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">金色刺繡 5cm</td></tr>
+            <tr><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">背部LOGO</td><td style="padding:3px 0;border-bottom:1px solid #3a3a4a;">金色絲印 20cm</td></tr>
+            <tr><td style="padding:3px 0;">配件</td><td style="padding:3px 0;">黑褲 + 黑鞋</td></tr>
+          </table>
+        </div>
+        <div class="uniform-label">制服規範說明</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 3. Mini Program Homepage ===== -->
+<div class="section">
+  <div class="section-title">📱 小程式首頁布局方案</div>
+  <div class="section-desc">保持與招牌、制服一致的品牌VI · 黑灰高級感 · 金色點綴</div>
+
+  <div class="vi-board">
+    <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+      <!-- Mobile Frame -->
+      <div style="width:300px;background:#1a1a2e;border-radius:16px;overflow:hidden;border:1px solid #333;box-shadow:0 4px 30px rgba(0,0,0,0.3);">
+        <!-- Header -->
+        <div style="background:linear-gradient(135deg,#0f0f1e,#1a1a2e);padding:20px 16px 16px;text-align:center;border-bottom:1px solid #2d2d3d;">
+          <div style="font-size:18px;font-weight:700;color:#c9a961;letter-spacing:4px;">港康足護</div>
+          <div style="font-size:9px;color:#888;letter-spacing:2px;margin-top:2px;">HK FootCare</div>
+          <div style="font-size:10px;color:#c9a961;opacity:0.7;letter-spacing:1px;margin-top:4px;">專業足部護理中心</div>
+          <div style="display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap;">
+            <span style="background:rgba(201,169,97,0.15);color:#c9a961;padding:3px 10px;border-radius:12px;font-size:9px;">灰甲護理</span>
+            <span style="background:rgba(201,169,97,0.15);color:#c9a961;padding:3px 10px;border-radius:12px;font-size:9px;">甲溝炎</span>
+            <span style="background:rgba(201,169,97,0.15);color:#c9a961;padding:3px 10px;border-radius:12px;font-size:9px;">嵌甲</span>
+            <span style="background:rgba(201,169,97,0.15);color:#c9a961;padding:3px 10px;border-radius:12px;font-size:9px;">雞眼</span>
+            <span style="background:rgba(201,169,97,0.15);color:#c9a961;padding:3px 10px;border-radius:12px;font-size:9px;">痛症舒緩</span>
+          </div>
+        </div>
+
+        <!-- Section: 專業足部護理 -->
+        <div style="padding:12px 14px 4px;">
+          <div style="font-size:13px;font-weight:600;color:#c9a961;letter-spacing:1px;">📋 專業足部護理</div>
+        </div>
+        <div style="padding:0 14px 8px;display:flex;gap:6px;flex-wrap:wrap;">
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">灰甲護理</div>
+            <div style="font-size:9px;color:#888;margin-top:2px;">HK$380起</div>
+          </div>
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">甲溝炎護理</div>
+            <div style="font-size:9px;color:#888;margin-top:2px;">HK$380起</div>
+          </div>
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">嵌甲矯正</div>
+            <div style="font-size:9px;color:#888;margin-top:2px;">HK$480起</div>
+          </div>
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">雞眼護理</div>
+            <div style="font-size:9px;color:#888;margin-top:2px;">HK$300起</div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#333,transparent);margin:0 14px;"></div>
+
+        <!-- Section: 健康放鬆護理 -->
+        <div style="padding:8px 14px 4px;">
+          <div style="font-size:13px;font-weight:600;color:#c9a961;letter-spacing:1px;">💆 健康放鬆護理</div>
+        </div>
+        <div style="padding:0 14px 8px;display:flex;gap:6px;flex-wrap:wrap;">
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">足部按摩</div>
+          </div>
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">全身放鬆</div>
+          </div>
+          <div style="background:#2d2d3d;border-radius:8px;padding:8px 12px;flex:1;min-width:80px;text-align:center;">
+            <div style="font-size:11px;color:#f5f5f0;">痛症舒緩</div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#333,transparent);margin:0 14px;"></div>
+
+        <!-- Section: 預約服務 -->
+        <div style="padding:8px 14px 4px;">
+          <div style="font-size:13px;font-weight:600;color:#c9a961;letter-spacing:1px;">📅 預約服務</div>
+        </div>
+        <div style="padding:0 14px 12px;display:flex;gap:8px;">
+          <div style="background:linear-gradient(135deg,#1a3a5c,#0f2a45);border-radius:8px;padding:10px;flex:1;text-align:center;">
+            <div style="font-size:12px;font-weight:600;color:#f5f5f0;">📲 在線預約</div>
+            <div style="font-size:9px;color:#888;margin-top:2px;">填表提交</div>
+          </div>
+          <div style="background:#25D366;border-radius:8px;padding:10px;flex:1;text-align:center;">
+            <div style="font-size:12px;font-weight:600;color:#fff;">💬 WhatsApp</div>
+            <div style="font-size:9px;color:rgba(255,255,255,0.7);margin-top:2px;">即時諮詢</div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="background:#0f0f1e;padding:12px;text-align:center;border-top:1px solid #2d2d3d;">
+          <div style="font-size:9px;color:#555;letter-spacing:1px;">🦶 港康足護 HK FootCare · 香港專業足部護理品牌</div>
+        </div>
+      </div>
+
+      <!-- Layout Spec -->
+      <div style="width:280px;">
+        <div style="background:#0f0f1e;border-radius:8px;padding:16px;border:1px solid #333;">
+          <div style="color:#c9a961;font-size:13px;font-weight:600;margin-bottom:12px;letter-spacing:1px;">📐 頁面布局方案</div>
+          <div style="font-size:11px;color:#aaa;line-height:1.8;">
+            <div>▸ <span style="color:#c9a961;">頂部</span>：品牌LOGO + 服務標籤</div>
+            <div>▸ <span style="color:#c9a961;">服務模塊</span>：卡片式分類展示</div>
+            <div>▸ <span style="color:#c9a961;">分隔線</span>：金色細線</div>
+            <div>▸ <span style="color:#c9a961;">預約區</span>：雙按鈕（在線/WApp）</div>
+            <div>▸ <span style="color:#c9a961;">底部</span>：品牌信息 + 聯繫方式</div>
+          </div>
+
+          <div style="color:#c9a961;font-size:13px;font-weight:600;margin:16px 0 8px;letter-spacing:1px;">🖼️ 圖片素材建議</div>
+          <div style="font-size:10px;color:#888;line-height:1.7;">
+            <div>• 足部護理工具實拍圖（白底）</div>
+            <div>• 灰甲修復前後對比（授權）</div>
+            <div>• 工作室環境實拍（乾淨專業）</div>
+            <div>• 護理師工作照（穿制服）</div>
+            <div>• 產品平舖圖（品牌風格）</div>
+            <div>• 香港街鋪門面實拍</div>
+          </div>
+
+          <div style="color:#c9a961;font-size:13px;font-weight:600;margin:16px 0 8px;letter-spacing:1px;">🔤 字體規範</div>
+          <div style="font-size:10px;color:#888;line-height:1.7;">
+            <div>• 品牌中文：<span style="color:#c9a961;">思源黑體 / Noto Sans SC</span></div>
+            <div>• 品牌英文：<span style="color:#c9a961;">Montserrat / Helvetica</span></div>
+            <div>• 正文：<span style="color:#c9a961;">PingFang SC / -apple-system</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mockup-label">小程序首頁布局方案 · 黑灰金品牌統一風格</p>
+  </div>
+</div>
+
+<!-- ===== Brand VI Summary ===== -->
+<div class="section">
+  <div class="section-title">📋 品牌VI體系總覽</div>
+  <div class="vi-board">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;">
+      <div style="text-align:center;padding:12px;background:#0f0f1e;border-radius:8px;">
+        <div style="font-size:24px;margin-bottom:6px;">🏪</div>
+        <div style="font-size:10px;color:#c9a961;letter-spacing:1px;">店面招牌</div>
+        <div style="font-size:9px;color:#666;margin-top:4px;">啞黑+金+LED背光</div>
+      </div>
+      <div style="text-align:center;padding:12px;background:#0f0f1e;border-radius:8px;">
+        <div style="font-size:24px;margin-bottom:6px;">👔</div>
+        <div style="font-size:10px;color:#c9a961;letter-spacing:1px;">員工制服</div>
+        <div style="font-size:9px;color:#666;margin-top:4px;">深灰+金色LOGO</div>
+      </div>
+      <div style="text-align:center;padding:12px;background:#0f0f1e;border-radius:8px;">
+        <div style="font-size:24px;margin-bottom:6px;">📱</div>
+        <div style="font-size:10px;color:#c9a961;letter-spacing:1px;">小程序/網站</div>
+        <div style="font-size:9px;color:#666;margin-top:4px;">黑灰金統一風格</div>
+      </div>
+      <div style="text-align:center;padding:12px;background:#0f0f1e;border-radius:8px;">
+        <div style="font-size:24px;margin-bottom:6px;">🎨</div>
+        <div style="font-size:10px;color:#c9a961;letter-spacing:1px;">品牌色</div>
+        <div style="font-size:9px;color:#666;margin-top:4px;">#C9A961 / #1A1A2E</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;padding:14px;background:#0f0f1e;border-radius:8px;">
+      <div style="color:#c9a961;font-size:13px;font-weight:600;margin-bottom:8px;letter-spacing:1px;">統一品牌口號</div>
+      <div style="font-size:14px;letter-spacing:2px;color:#f5f5f0;">「專業足部護理 + 痛症舒緩 + 健康管理」</div>
+      <div style="font-size:10px;color:#888;margin-top:4px;">讓客戶看到招牌、員工、小程序，就能馬上認出港康足護</div>
+    </div>
+  </div>
+</div>
+
+<p class="note">港康足護 HK FootCare · 品牌視覺設計方案 v1.0 · 2026-07-28</p>
+
+</div>
+</body>
+</html>
