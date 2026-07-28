@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>港康足護 · 顏色規範</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", sans-serif; background: #f0f0f0; padding: 20px; }
+  .page { max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 22px; color: #1a1a2e; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .card h2 { font-size: 16px; color: #1a1a2e; margin-bottom: 12px; border-left: 3px solid #c9a961; padding-left: 10px; }
+
+  .color-card { display: flex; gap: 16px; align-items: stretch; margin-bottom: 14px; }
+  .color-swatch { width: 100px; min-height: 100px; border-radius: 8px; flex-shrink: 0; }
+  .color-info { flex: 1; }
+  .color-info .name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .color-info .desc { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .color-info .values { font-size: 12px; color: #555; line-height: 1.5; }
+  .color-info .values span { display: inline-block; background: #f5f5f5; padding: 1px 6px; border-radius: 3px; margin: 1px; font-family: monospace; }
+
+  .note-box { background: #f8f4eb; border-left: 3px solid #c9a961; padding: 12px; font-size: 12px; color: #666; line-height: 1.6; border-radius: 0 4px 4px 0; margin-top: 12px; }
+
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; }
+  .usage-grid .item { padding: 8px; background: #fafafa; border-radius: 4px; border: 1px solid #eee; }
+  .usage-grid .item .app { font-weight: 600; color: #333; }
+  .usage-grid .item .clr { color: #888; }
+
+  @media print { body { background: #fff; } .card { box-shadow: none; border: 1px solid #ddd; } }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>港康足護 HK FootCare</h1>
+<p class="subtitle">品牌顏色規範 · Color Specification · 印刷/製作通用</p>
+
+<div class="card">
+  <h2>🎨 品牌標準色</h2>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#0F0F1E;"></div>
+    <div class="color-info">
+      <div class="name">⬛ 啞黑 / Primary Dark</div>
+      <div class="desc">招牌底板、頁面背景、制服深色款</div>
+      <div class="values">
+        <span>HEX: #0F0F1E</span><br>
+        <span>RGB: 15, 15, 30</span><br>
+        <span>CMYK: C:85% M:80% Y:70% K:90%</span><br>
+        <span>Pantone: Black 6 C</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#1A1A2E;"></div>
+    <div class="color-info">
+      <div class="name">🟦 深灰藍 / Dark Slate</div>
+      <div class="desc">頁面次背景、制服務</div>
+      <div class="values">
+        <span>HEX: #1A1A2E</span><br>
+        <span>RGB: 26, 26, 46</span><br>
+        <span>CMYK: C:80% M:75% Y:60% K:70%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#C9A961;"></div>
+    <div class="color-info">
+      <div class="name">🟨 香檳金 / Signature Gold ⭐ 品牌主色</div>
+      <div class="desc">招牌主文字、LOGO、強調元素、分隔線</div>
+      <div class="values">
+        <span>HEX: #C9A961</span><br>
+        <span>RGB: 201, 169, 97</span><br>
+        <span>CMYK: C:15% M:35% Y:70% K:0%</span><br>
+        <span>Pantone: 16-0942 TPX (Metallic Gold)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#E8A838;"></div>
+    <div class="color-info">
+      <div class="name">🟧 暖金 / Warm Gold</div>
+      <div class="desc">CTA按鈕、金色點綴、次要強調</div>
+      <div class="values">
+        <span>HEX: #E8A838</span><br>
+        <span>RGB: 232, 168, 56</span><br>
+        <span>CMYK: C:5% M:40% Y:85% K:0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#F5F5F0;"></div>
+    <div class="color-info">
+      <div class="name">⬜ 銀白 / Silver White</div>
+      <div class="desc">輔助文字、次要標題、頁面文字</div>
+      <div class="values">
+        <span>HEX: #F5F5F0</span><br>
+        <span>RGB: 245, 245, 240</span><br>
+        <span>CMYK: C:5% M:3% Y:5% K:0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#1A3A5C;"></div>
+    <div class="color-info">
+      <div class="name">🟦 深海軍藍 / Deep Navy</div>
+      <div class="desc">現有服務品牌色（保留）、按鈕背景</div>
+      <div class="values">
+        <span>HEX: #1A3A5C</span><br>
+        <span>RGB: 26, 58, 92</span><br>
+        <span>CMYK: C:85% M:55% Y:30% K:30%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background:#25D366;"></div>
+    <div class="color-info">
+      <div class="name">🟩 WhatsApp綠色</div>
+      <div class="desc">WhatsApp按鈕專用色（不變）</div>
+      <div class="values">
+        <span>HEX: #25D366</span><br>
+        <span>RGB: 37, 211, 102</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>📋 顏色應用場景</h2>
+  <div class="usage-grid">
+    <div class="item"><div class="app">🏪 招牌底板</div><div class="clr">➜ 啞黑 #0F0F1E</div></div>
+    <div class="item"><div class="app">🏪 招牌主文字</div><div class="clr">➜ 香檳金 #C9A961</div></div>
+    <div class="item"><div class="app">🏪 招牌輔助字</div><div class="clr">➜ 銀白 #F5F5F0</div></div>
+    <div class="item"><div class="app">🏪 招牌分隔線</div><div class="clr">➜ 香檳金 #C9A961</div></div>
+    <div class="item"><div class="app">👔 制服主色（深灰）</div><div class="clr">➜ #3A3A4A</div></div>
+    <div class="item"><div class="app">👔 制服刺繡LOGO</div><div class="clr">➜ 香檳金 #C9A961</div></div>
+    <div class="item"><div class="app">📱 頁面背景</div><div class="clr">➜ #1A1A2E / #F5F7FA</div></div>
+    <div class="item"><div class="app">📱 品牌標題文字</div><div class="clr">➜ 香檳金 #C9A961</div></div>
+    <div class="item"><div class="app">📱 CTA按鈕</div><div class="clr">➜ 暖金 #E8A838</div></div>
+    <div class="item"><div class="app">📱 WhatsApp按鈕</div><div class="clr">➜ #25D366</div></div>
+    <div class="item"><div class="app">📱 卡片背景</div><div class="clr">➜ 白色 #FFFFFF</div></div>
+    <div class="item"><div class="app">📱 服務標籤</div><div class="clr">➜ 深海軍藍 #1A3A5C</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🔤 品牌字體規範</h2>
+  <div style="font-size:13px;color:#555;line-height:1.8;">
+    <p><strong>中文字體（招牌+數位）：</strong></p>
+    <p style="font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;font-weight:900;letter-spacing:4px;color:#C9A961;">港康足護 思源黑體 Heavy</p>
+    <p style="font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;">專業足部護理中心 Noto Sans SC Bold</p>
+
+    <p style="margin-top:12px;"><strong>英文字體：</strong></p>
+    <p style="font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:20px;font-weight:700;letter-spacing:3px;color:#C9A961;">HK FootCare Montserrat Bold</p>
+    <p style="font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;">Foot Care · Pain Relief · Wellness</p>
+
+    <p style="margin-top:12px;"><strong>替代字體（如無法使用思源黑體）：</strong></p>
+    <p style="color:#888;">中文：微軟雅黑 / 蘋方 / 華文細黑</p>
+    <p style="color:#888;">英文：Arial / Helvetica</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="note-box">
+    <strong>📌 給印刷廠/製作公司備註：</strong><br>
+    1. 以上顏色值為數位參考，實際印刷/製作可能因材料而有色差，建議先打樣確認。<br>
+    2. 金色立體字建議實物對色，香檳金以 Pantone 16-0942 TPX 為準。<br>
+    3. 招牌底板啞黑請確認表面處理為啞面（非亮面）。<br>
+    4. LED背光色溫統一使用 3000-3500K 暖光。
+  </div>
+</div>
+
+<p style="text-align:center;font-size:11px;color:#999;padding:20px;">港康足護 HK FootCare · 顏色規範 v1.0 · 2026-07-28</p>
+</div>
+</body>
+</html>
