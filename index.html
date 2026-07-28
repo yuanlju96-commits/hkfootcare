@@ -321,11 +321,32 @@
         </div>
         <p style="font-size:12px;opacity:0.7;margin-top:10px;">關注足部健康，從專業護理開始。</p>
         <a href="https://wa.me/85295564471?text=你好，我想預約港康足護服務" class="cta-btn" target="_blank">📲 立即預約</a>
+        <div class="nav-links" style="display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:16px;">
+            <a href="#services" style="background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;font-size:12px;color:#fff;text-decoration:none;">🦶 服務</a>
+            <a href="#video-section" style="background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;font-size:12px;color:#fff;text-decoration:none;">🎬 影片</a>
+            <a href="#products" style="background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;font-size:12px;color:#fff;text-decoration:none;">🛍️ 產品</a>
+            <a href="#booking" style="background:rgba(255,255,255,0.12);padding:6px 14px;border-radius:20px;font-size:12px;color:#fff;text-decoration:none;">📅 預約</a>
+        </div>
     </div>
 
     <div class="container">
 
+        <!-- ===== Video ===== -->
+        <div class="section" id="video-section">
+            <div class="section-title">🎬 灰甲修復過程</div>
+            <div class="card">
+                <video controls playsinline preload="metadata" style="width:100%;border-radius:8px;display:block;" onerror="this.parentElement.innerHTML='<p style=text-align:center;color:#999;padding:20px;>⚠️ 影片載入失敗，請稍後再試</p>'">
+                    <source src="video-zhijia.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片播放。
+                </video>
+                <p style="font-size:13px;color:#888;text-align:center;margin-top:10px;">
+                    🦶 灰指甲修復過程 — 及早處理，重拾健康雙足
+                </p>
+            </div>
+        </div>
+
         <!-- ===== Services ===== -->
+        <div class="section" id="services">
         <div class="section">
             <div class="section-title">🦶 足部護理服務</div>
             <div class="card" style="padding:0;">
@@ -678,7 +699,7 @@
         </div>
 
         <!-- ===== Booking ===== -->
-        <div class="section">
+        <div class="section" id="booking">
             <div class="section-title">📅 在線預約</div>
             <div class="form-card">
                 <form id="bookingForm">
