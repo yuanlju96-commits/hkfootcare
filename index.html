@@ -74,6 +74,8 @@
             background: #fff; border-radius: 12px; padding: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 12px;
         }
+        .video-card video { display: block; max-width: 100%; }
+        .video-card video::-webkit-media-controls { border-radius: 8px; }
 
         /* ===== Services ===== */
         .service-group {
@@ -320,6 +322,21 @@
                     <span class="check">✅</span>
                     <span class="text">注重衞生、安全及私隱</span>
                 </div>
+            </div>
+        </div>
+
+        <!-- ===== Video ===== -->
+        <div class="section" id="video-section">
+            <div class="section-title">🎬 灰甲修復過程</div>
+            <div class="card video-card">
+                <video controls playsinline preload="metadata" poster="" style="width:100%;border-radius:8px;" onerror="this.parentElement.innerHTML='<p style=text-align:center;color:#999;padding:20px;>⚠️ 影片載入失敗，請稍後再試</p>'">
+                    <source src="video-zhijia.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片播放。
+                </video>
+                <p style="font-size:13px;color:#888;text-align:center;margin-top:10px;">
+                    🦶 灰指甲修復過程 — 及早處理，重拾健康雙足<br>
+                    <span style="font-size:11px;color:#aaa;">如有任何疑問，歡迎 WhatsApp 諮詢</span>
+                </p>
             </div>
         </div>
 
