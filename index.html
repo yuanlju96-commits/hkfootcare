@@ -149,24 +149,7 @@
         .process-item .text { font-size: 14px; color: #444; padding-top: 3px; }
 
         /* ===== Products ===== */
-        .prod-nav {
-            display: flex; gap: 6px; overflow-x: auto;
-            padding-bottom: 6px; margin-bottom: 10px;
-            -webkit-overflow-scrolling: touch;
-        }
-        .prod-nav::-webkit-scrollbar { height: 3px; }
-        .prod-nav::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
-        .prod-nav a {
-            flex-shrink: 0;
-            padding: 8px 16px; border-radius: 20px;
-            font-size: 13px; font-weight: 600; color: #1a3a5c;
-            background: #e8f0fe; text-decoration: none;
-            transition: .2s;
-        }
-        .prod-nav a:active,
-        .prod-nav a.active { background: #1a3a5c; color: #fff; }
-
-        .prod-grid { display: flex; flex-direction: column; gap: 14px; }
+        .prod-list { display: flex; flex-direction: column; gap: 16px; }
         .prod-card {
             background: #fff; border-radius: 12px; overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -176,58 +159,32 @@
             background: #f0f4f8; overflow: hidden;
         }
         .prod-img img { width: 100%; height: 100%; object-fit: cover; }
-        .prod-body { padding: 14px 16px 16px; }
-        .prod-name { font-size: 16px; font-weight: 700; color: #1a3a5c; }
-        .prod-desc { font-size: 13px; color: #666; margin-top: 6px; line-height: 1.5; }
+        .prod-body { padding: 16px; }
+        .prod-name { font-size: 17px; font-weight: 700; color: #1a3a5c; }
+        .prod-desc { font-size: 13px; color: #666; margin-top: 6px; line-height: 1.6; }
+        .prod-desc ul { margin: 6px 0 0 16px; padding: 0; }
+        .prod-desc li { font-size: 13px; color: #555; margin-bottom: 3px; }
         .prod-price {
             font-size: 18px; font-weight: 700; color: #c0392b;
-            margin-top: 8px;
+            margin-top: 10px;
         }
         .prod-price small { font-size: 12px; font-weight: 400; color: #999; }
-        .prod-tags {
-            display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px;
-        }
-        .prod-tags span {
-            background: #f0f4f8; padding: 2px 10px;
-            border-radius: 12px; font-size: 11px; color: #1a3a5c;
-        }
-        .prod-detail {
-            max-height: 0; overflow: hidden;
-            transition: max-height .3s ease, padding .3s ease;
-            padding: 0 16px;
-        }
-        .prod-detail.open {
-            max-height: 600px;
-            padding: 0 16px 16px;
-        }
-        .prod-detail table { width: 100%; font-size: 12px; border-collapse: collapse; }
-        .prod-detail td {
-            padding: 6px 4px; border-bottom: 1px solid #f0f0f0;
-            vertical-align: top;
-        }
-        .prod-detail td:first-child {
-            width: 70px; color: #999; white-space: nowrap;
-        }
-        .prod-detail td:last-child { color: #444; }
-        .btn-more {
+        .btn-inquire {
             display: inline-block;
-            margin-top: 10px;
-            padding: 6px 16px;
-            background: #f0f4f8; color: #1a3a5c;
-            border: none; border-radius: 6px;
-            font-size: 12px; cursor: pointer;
-        }
-        .btn-more:active { background: #d0dce8; }
-        .btn-wa-sm {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 20px;
+            margin-top: 12px;
+            padding: 10px 24px;
             background: #25D366; color: #fff;
             border: none; border-radius: 8px;
-            font-size: 13px; font-weight: 600; cursor: pointer;
+            font-size: 14px; font-weight: 600; cursor: pointer;
             text-decoration: none;
         }
-        .btn-wa-sm:active { opacity: 0.9; }
+        .btn-inquire:active { opacity: 0.9; }
+        .prod-tag {
+            display: inline-block;
+            background: #e8f0fe; padding: 3px 10px;
+            border-radius: 12px; font-size: 11px; color: #1a3a5c;
+            margin-right: 4px; margin-top: 6px;
+        }
 
         /* ===== Contact ===== */
         .contact-bar { display: flex; gap: 8px; margin: 14px 0; }
@@ -465,228 +422,76 @@
                 精選足部護理用品　·　深圳供應　·　香港配送
             </p>
 
-            <div class="prod-nav" id="prodNav">
-                <a href="#prod-a" class="active" data-cat="a">護理工具</a>
-                <a href="#prod-b" data-cat="b">按摩放鬆</a>
-                <a href="#prod-c" data-cat="c">日常護理</a>
-                <a href="#prod-d" data-cat="d">組合套裝</a>
-            </div>
+            <div class="prod-list">
 
-            <!-- ===== Category A: 護理工具 ===== -->
-            <div class="prod-grid" id="prod-a" data-cat="a">
+                <!-- 產品A -->
                 <div class="prod-card">
-                    <div class="prod-img"><img src="products/product_1.jpg" alt="足部護理工具套裝6件" loading="lazy"></div>
+                    <div class="prod-img"><img src="products/product_1.jpg" alt="港康足護 家庭足部護理套裝" loading="lazy"></div>
                     <div class="prod-body">
-                        <div class="prod-name">足部護理工具套裝（6件）</div>
-                        <div class="prod-desc">適合家庭日常護理：不鏽鋼護理工具、指甲剪、銼刀、修剪工具等</div>
+                        <div class="prod-name">港康足護 家庭足部護理套裝</div>
+                        <div class="prod-desc">
+                            適合家庭日常足部護理使用。<br><br>
+                            包含：
+                            <ul>
+                                <li>不鏽鋼護理工具</li>
+                                <li>指甲護理工具</li>
+                                <li>足部護理銼</li>
+                                <li>簡易護理工具</li>
+                            </ul>
+                        </div>
                         <div class="prod-price">HK$128 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>不鏽鋼</span><span>6件</span><span>日常護理</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足部護理工具套裝6件】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>包含</td><td>不鏽鋼護理工具、指甲剪、銼刀、修剪工具等</td></tr>
-                            <tr><td>適合</td><td>家庭日常護理、足部基礎保養</td></tr>
-                            <tr><td>售價</td><td>HK$128 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
+                        <div><span class="prod-tag">家庭日常護理入門產品</span></div>
+                        <a class="btn-inquire" href="https://wa.me/85295564471?text=你好，我想查詢【港康足護 家庭足部護理套裝】" target="_blank">💬 立即諮詢</a>
                     </div>
                 </div>
 
+                <!-- 產品B -->
                 <div class="prod-card">
-                    <div class="prod-img"><img src="products/product_5.jpg" alt="專業足部護理工具套裝10件" loading="lazy"></div>
+                    <div class="prod-img"><img src="products/care_set.jpg" alt="港康足護 足部修護霜" loading="lazy"></div>
                     <div class="prod-body">
-                        <div class="prod-name">專業足部護理工具套裝（10件）</div>
-                        <div class="prod-desc">升級專業護理套裝：多功能護理工具、不鏽鋼材質，適合專業及進階使用</div>
-                        <div class="prod-price">HK$198 <small>起 ⭐ 推薦</small></div>
-                        <div class="prod-tags">
-                            <span>專業級</span><span>10件</span><span>不鏽鋼</span><span>⭐推薦</span>
+                        <div class="prod-name">港康足護 足部修護霜</div>
+                        <div class="prod-desc">
+                            日常足部保濕護理產品，適合乾燥、粗糙足部的日常護理。
                         </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【專業足部護理工具套裝10件】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>包含</td><td>多功能護理工具、不鏽鋼材質，適合專業及進階使用</td></tr>
-                            <tr><td>適合</td><td>需完整護理工具者、家庭必備</td></tr>
-                            <tr><td>售價</td><td>HK$198 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/nail_tool.jpg" alt="指甲護理工具套裝" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">指甲護理工具套裝</div>
-                        <div class="prod-desc">適合日常指甲護理</div>
                         <div class="prod-price">HK$88 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>指甲護理</span><span>精準</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【指甲護理工具套裝】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>適合</td><td>日常指甲護理、灰甲護理後續保養</td></tr>
-                            <tr><td>售價</td><td>HK$88 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
+                        <div><span class="prod-tag">消耗型產品</span><span class="prod-tag">重複購買</span></div>
+                        <a class="btn-inquire" href="https://wa.me/85295564471?text=你好，我想查詢【港康足護 足部修護霜】" target="_blank">💬 立即諮詢</a>
                     </div>
                 </div>
+
+                <!-- 產品C -->
+                <div class="prod-card">
+                    <div class="prod-img"><img src="products/massage_ball.jpg" alt="港康足護 足部·全身放鬆按摩套裝" loading="lazy"></div>
+                    <div class="prod-body">
+                        <div class="prod-name">港康足護 足部·全身放鬆按摩套裝</div>
+                        <div class="prod-desc">
+                            適合日常足部放鬆及身體舒緩使用。<br><br>
+                            包含：
+                            <ul>
+                                <li>足底按摩球</li>
+                                <li>足部滾輪</li>
+                                <li>肌肉放鬆按摩工具</li>
+                                <li>經絡放鬆棒</li>
+                                <li>日常身體按摩輔助工具</li>
+                            </ul>
+                            <br>
+                            適合：
+                            <ul>
+                                <li>久站人士</li>
+                                <li>長時間工作人士</li>
+                                <li>運動後放鬆</li>
+                                <li>中老年日常保健</li>
+                                <li>足部疲勞及身體放鬆需求</li>
+                            </ul>
+                        </div>
+                        <div class="prod-price">HK$128 <small>起</small></div>
+                        <div><span class="prod-tag">足部護理後家庭健康放鬆產品</span></div>
+                        <a class="btn-inquire" href="https://wa.me/85295564471?text=你好，我想查詢【港康足護 足部·全身放鬆按摩套裝】" target="_blank">💬 立即諮詢</a>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- ===== Category B: 按摩放鬆 ===== -->
-            <div class="prod-grid" id="prod-b" data-cat="b" style="display:none;">
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/massage_ball.jpg" alt="足底筋膜按摩球" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">足底筋膜按摩球</div>
-                        <div class="prod-desc">高彈力材質，深層刺激足底穴位，舒緩腳底疲勞和筋膜緊張</div>
-                        <div class="prod-price">HK$48 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>按摩球</span><span>便攜</span><span>舒緩</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足底筋膜按摩球】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>適合</td><td>上班族、久站人士、運動後恢復</td></tr>
-                            <tr><td>售價</td><td>HK$48 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/massage_roller.jpg" alt="足部按摩滾輪" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">足部按摩滾輪</div>
-                        <div class="prod-desc">雙排滾輪設計，全腳底按摩，促進血液循環</div>
-                        <div class="prod-price">HK$68 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>滾輪</span><span>穴位</span><span>舒緩</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足部按摩滾輪】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>適合</td><td>上班族、久站人士、運動恢復</td></tr>
-                            <tr><td>售價</td><td>HK$68 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== Category C: 日常護理 ===== -->
-            <div class="prod-grid" id="prod-c" data-cat="c" style="display:none;">
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/heel_socks.jpg" alt="足跟護理襪" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">足跟護理襪（保濕修護）</div>
-                        <div class="prod-desc">保濕修護設計，夜間穿戴，改善腳跟乾裂粗糙</div>
-                        <div class="prod-price">HK$58 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>保濕</span><span>修護</span><span>夜用</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足跟護理襪】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>適合</td><td>腳跟乾裂者、日常足部保養</td></tr>
-                            <tr><td>售價</td><td>HK$58 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/silicon_pad.jpg" alt="矽膠護腳套" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">矽膠護腳套（前掌/後跟款）</div>
-                        <div class="prod-desc">柔軟矽膠材質，緩解行走壓力，保護腳掌和腳跟</div>
-                        <div class="prod-price">HK$38 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>矽膠</span><span>減壓</span><span>保護</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【矽膠護腳套】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>適合</td><td>久站工作者、行走不適人士</td></tr>
-                            <tr><td>售價</td><td>HK$38 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/care_set.jpg" alt="足部護理用品套裝" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">足部護理用品套裝</div>
-                        <div class="prod-desc">日常足部護理必備，呵護雙足</div>
-                        <div class="prod-price">HK$98 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>護理</span><span>保養</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【足部護理用品套裝】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>適合</td><td>日常足部保養</td></tr>
-                            <tr><td>售價</td><td>HK$98 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== Category D: 組合套裝 ===== -->
-            <div class="prod-grid" id="prod-d" data-cat="d" style="display:none;">
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/product_2.jpg" alt="居家足部護理基礎套裝" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">居家足部護理基礎套裝</div>
-                        <div class="prod-desc">護理工具套裝 + 護理襪 + 按摩球，新手入門首選</div>
-                        <div class="prod-price">HK$198 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>超值</span><span>新手</span><span>組合</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【居家足部護理基礎套裝】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
-                    <div class="prod-detail">
-                        <table>
-                            <tr><td>包含</td><td>護理工具套裝 + 護理襪 + 按摩球</td></tr>
-                            <tr><td>適合</td><td>新手入門、想開始足部護理者</td></tr>
-                            <tr><td>售價</td><td>HK$198 起</td></tr>
-                            <tr><td>來源</td><td>深圳供應 · 香港配送</td></tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="prod-card">
-                    <div class="prod-img"><img src="products/product_3.jpg" alt="專業護理升級套裝" loading="lazy"></div>
-                    <div class="prod-body">
-                        <div class="prod-name">專業護理升級套裝</div>
-                        <div class="prod-desc">全面護理組合，滿足進階護理需求</div>
-                        <div class="prod-price">HK$368 <small>起</small></div>
-                        <div class="prod-tags">
-                            <span>進階</span><span>全面</span>
-                        </div>
-                        <button class="btn-more" onclick="toggleDetail(this)">📋 查看詳情</button>
-                        <a class="btn-wa-sm" href="https://wa.me/85295564471?text=你好，我想查詢【專業護理升級套裝】" target="_blank">💬 WhatsApp諮詢</a>
-                    </div>
+        </div>
                     <div class="prod-detail">
                         <table>
                             <tr><td>適合</td><td>全面護理需求、送禮</td></tr>
@@ -813,29 +618,7 @@
             dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
         }
 
-        function toggleDetail(btn) {
-            const detail = btn.closest('.prod-card').querySelector('.prod-detail');
-            if (!detail) return;
-            detail.classList.toggle('open');
-            btn.textContent = detail.classList.contains('open') ? '📋 收起詳情' : '📋 查看詳情';
-        }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('#prodNav a');
-            const grids = document.querySelectorAll('.prod-grid');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const cat = this.dataset.cat;
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                    grids.forEach(g => {
-                        g.style.display = g.dataset.cat === cat ? '' : 'none';
-                    });
-                });
-            });
-        });
     </script>
 
 </body>
